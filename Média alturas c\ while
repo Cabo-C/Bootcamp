@@ -1,0 +1,36 @@
+total_pessoas = 0  # Contador total de pessoas
+
+
+while True:
+    Altura = float(input("Insira a altura: "))
+    if Altura == 0:
+        break
+   
+    Genero = input("Insira o gênero [m] mulher ou [h] homem: “)  
+    if Genero == "m":
+        conta_m += 1
+    elif Genero == "h":
+        conta_h += 1
+    else:
+        print("Erro: gênero inválido!")
+        continue  # Retorna ao início do loop para pedir novamente
+   
+    total_pessoas += 1  # Incrementa o total de pessoas registradas
+
+
+    if Altura > maior:
+        maior = Altura
+    if Altura < menor:
+        menor = Altura
+
+
+# Evita divisão por zero caso nenhuma pessoa tenha sido registrada
+if total_pessoas > 0:
+    media = (maior + menor) / 2
+    porcentagem = (conta_h / total_pessoas) * 100
+    print(f"Média das alturas: {media:.2f}")
+    print(f"Porcentagem de homens: {porcentagem:.2f}%")
+else:
+    print("Nenhuma pessoa registrada.")
+
+
