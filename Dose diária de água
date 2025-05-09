@@ -1,0 +1,13 @@
+from colorama import init, Fore
+def calcular_dose_diária (massa):
+   if massa>0:
+       return massa*0.03
+   else:
+       print(Fore.RED+ "Massa inválida! Coloque um valor positivo em KG!")
+
+
+massa= float(input("Coloque sua massa em Kg:"))
+dose diária=calcular_dose_diária(massa)
+
+
+print(Fore.LIGHTCYAN_EX + f"Sua dose diária de água é {dose_diaria: .2f} em lítros")
